@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: Adam;
-    src: url('./assets/font/adam.otf') format('opentype');
+    src: url('../../public/assets/font/adam.otf') format('opentype');
     font-display: swap;
 }
 

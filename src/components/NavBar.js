@@ -1,10 +1,11 @@
-import styles from '../styles/NavBar.modules.css';
+import styles from '../styles/NavBar.module.css';
 
-function NavBar() {
+function NavBar({ itemsInCart }) {
     return (
         <>
             <nav className={styles.navBar}>
-                <div className={styles.logo}></div>
+                <div className={styles.logo}>LOGO</div>
+                <div className={styles.cart}>CARRO {itemsInCart}</div>
             </nav>
         </>
     );

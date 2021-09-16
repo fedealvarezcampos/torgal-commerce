@@ -6,14 +6,12 @@ const products = [
     { id: 2, name: 'Pizza', price: '3€', description: 'Pizza loca' },
 ];
 
-const Products = () => {
+const Products = ({ products, addToCart }) => {
     return (
         <main>
             <ul className={styles.container}>
                 {products.map(product => (
-                    <li key={product.id}>
-                        <Product product={product} />
-                    </li>
+                    <Product key={product?.id} product={product} addToCart={addToCart} />
                 ))}
             </ul>
         </main>

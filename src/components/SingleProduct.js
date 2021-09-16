@@ -1,16 +1,23 @@
 import styles from '../styles/SingleProduct.module.css';
 
-const SingleProduct = ({ product }) => {
+const SingleProduct = ({ product, addToCart }) => {
     return (
         <>
-            <div className={styles.container}>
-                <p>{product.name}</p>
-                <p>{product.price}</p>
-                <span>{product.description}</span>
-            </div>
-            <div>
-                <button>Añadir al carro</button>
-            </div>
+            <li>
+                <div className={styles.container}>
+                    <div
+                        className={styles.productImage}
+                        style={{ backgroundImage: `url(${product?.media?.source})` }}
+                    />
+                    <p className={styles.productTitle}>{product?.name}</p>
+                    <p>{product?.price?.formatted_with_symbol}</p>
+                    <span
+                        className={styles.productDescription}
+                        dangerouslySetInnerHTML={{ __html: product?.description }}
+                    ></span>
+                    <button onClick={() => addToCart(product.id, 1)}>AÑADIR AL CARRO</button>
+                </div>
+            </li>
         </>
     );
 };

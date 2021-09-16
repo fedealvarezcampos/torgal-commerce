@@ -1,6 +1,37 @@
 .container {
     display: flex;
+    gap: 15px;
     flex-direction: column;
-    width: 400px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
     /* background-color: black; */
+}
+
+.container p {
+    margin: 0;
+}
+
+.container button {
+    justify-self: flex-end;
+}
+
+.productImage {
+    height: 15rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 5px solid var(--base-font);
+    background-size: cover;
+    background-position: center center;
+}
+
+.productTitle {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.productDescription {
+    max-width: 80%;
 }

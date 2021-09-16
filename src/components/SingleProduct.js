@@ -10,7 +10,7 @@ const SingleProduct = ({ product, addToCart }) => {
                         style={{ backgroundImage: `url(${product?.media?.source})` }}
                     />
                     <p className={styles.productTitle}>{product?.name}</p>
-                    <p>{product?.price?.formatted_with_symbol}</p>
+                    <p className={styles.productPrice}>{product?.price?.formatted_with_symbol}</p>
                     <span
                         className={styles.productDescription}
                         dangerouslySetInnerHTML={{ __html: product?.description }}

@@ -14,11 +14,11 @@
 }
 
 .container button {
-    justify-self: flex-end;
+    margin-top: auto;
 }
 
 .productImage {
-    height: 15rem;
+    height: 14rem;
     width: 100%;
     border-radius: 20px;
     border: 5px solid var(--base-font);
@@ -26,12 +26,21 @@
     background-position: center center;
 }
 
+.productPrice {
+    font-size: 1.3rem;
+}
+
 .productTitle {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .productDescription {
+    margin-top: auto;
     max-width: 80%;
+}
+
+.productDescription p {
+    font-size: 1.1rem;
 }

@@ -1,12 +1,14 @@
 .container {
     display: flex;
-    gap: 15px;
+    gap: 14px;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    /* background-color: black; */
+    padding: 2rem 1rem 2rem 1rem;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: var(--dark-item);
 }
 
 .container p {
@@ -18,12 +20,17 @@
 }
 
 .productImage {
+    position: relative;
     height: 14rem;
-    width: 100%;
-    border-radius: 20px;
+    width: 75%;
+    border-radius: 24px;
     border: 5px solid var(--base-font);
     background-size: cover;
     background-position: center center;
+}
+
+.productImage * {
+    border-radius: 18px;
 }
 
 .productPrice {
@@ -33,6 +40,7 @@
 .productTitle {
     margin: 0;
     font-size: 1.5rem;
+    font-style: italic;
     font-weight: 700;
 }
 

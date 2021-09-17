@@ -1,4 +1,4 @@
-function Cart() {
+function Cart({ cart }) {
     const isEmpty = true;
 
     const FilledCart = () => {

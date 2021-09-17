@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
-import { commerce } from '../src/lib/commerce';
-import { Products, NavBar, Cart } from '../src/components';
+import { commerce } from '../lib/commerce';
+import { Products, NavBar, Cart } from '../components';
+import { useCartDispatch, useCartState } from '../context/cart';
 
-function App() {
+export async function getStaticProps() {
+    const { data: merchandise } = await commerce.products.list();
+
+    return {
+        props: {
+            merchandise,
+        },
+    };
+}
+
+function App({ merchandise }) {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState({});
 
-    const fetchProds = async () => {
-        const { data } = await commerce.products.list();
-
-        setProducts(data);
-    };
-
-    const fetchCart = async () => {
-        setCart(await commerce.cart.retrieve());
-    };
+    const cart = useCartState();
+    const { setCart } = useCartDispatch();
 
     const handleAddProductToCart = async (productId, quantity) => {
         const item = await commerce.cart.add(productId, quantity);
@@ -22,18 +25,15 @@ function App() {
         setCart(item.cart);
     };
 
-    console.log(cart);
-
     useEffect(() => {
-        fetchProds();
-        fetchCart();
+        setProducts(merchandise);
     }, []);
 
     return (
         <>
             <NavBar itemsInCart={cart?.total_items} />
             <Products products={products} addToCart={handleAddProductToCart} />
-            <Cart cart={cart} />
+            {/* <Cart cart={cart} /> */}
         </>
     );
 }

@@ -1,9 +1,0 @@
-.container {
-    display: grid;
-    grid: auto / 1fr 1fr;
-    gap: 4rem;
-    padding: 0;
-    justify-self: center;
-    width: clamp(35rem, 60vw, 750px);
-    list-style: none;
-}

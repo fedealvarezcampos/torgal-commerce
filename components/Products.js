@@ -9,7 +9,10 @@ const products = [
 const Products = ({ products, addToCart }) => {
     return (
         <main>
-            <ul className={styles.container}>
+            <ul
+                className={styles.container}
+                style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
+            >
                 {products.map(product => (
                     <Product key={product?.id} product={product} addToCart={addToCart} />
                 ))}

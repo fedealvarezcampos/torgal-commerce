@@ -10,10 +10,6 @@ const SingleProduct = ({ product, addToCart }) => {
         <>
             <li>
                 <div className={styles.container}>
-                    {/* <div
-                        className={styles.productImage}
-                        style={{ backgroundImage: `url(${product?.media?.source})` }}
-                    /> */}
                     <div className={styles.productImage}>
                         <Image
                             loader={loader}

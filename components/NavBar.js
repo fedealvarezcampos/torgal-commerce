@@ -1,4 +1,5 @@
 import styles from '../styles/NavBar.module.css';
+import Spinner from './spinner';
 
 function NavBar({ itemsInCart, loading, setCartMenu }) {
     console.log(itemsInCart);
@@ -12,7 +13,7 @@ function NavBar({ itemsInCart, loading, setCartMenu }) {
                 </div>
                 <div className={styles.cart} onClick={() => setCartMenu(true)}>
                     <img src="./images/cart.svg" alt="cart" />
-                    {(loading && '?') || (itemsInCart !== 0 && <span>{itemsInCart}</span>)}
+                    {itemsInCart !== 0 && <span>{(loading && <Spinner />) || itemsInCart}</span>}
                 </div>
             </nav>
         </>

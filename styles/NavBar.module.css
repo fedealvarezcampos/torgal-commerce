@@ -43,19 +43,28 @@
 }
 
 .cart span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     right: 1rem;
     bottom: 3.4rem;
-    background-color: var(--light-green);
-    padding: 0.4rem;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.45rem;
     border-radius: 50%;
     font-family: 'Cabin', sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
     color: var(--dark-item);
+    background-color: var(--light-green);
 }
 
 .cart img {
     align-self: flex-start;
     height: 100%;
+}
+
+.cart .loader {
+    position: relative;
 }

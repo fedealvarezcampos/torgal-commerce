@@ -247,3 +247,55 @@ code {
         transform: scale(1);
     }
 }
+
+.transitionIn {
+    animation: transitionIn 450ms ease-in-out forwards;
+}
+
+.transitionOut {
+    animation: transitionOut 450ms ease-in-out forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 450ms ease-in-out forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 450ms ease-in-out forwards;
+}
+
+@keyframes transitionIn {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes transitionOut {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0;
+    }
+}

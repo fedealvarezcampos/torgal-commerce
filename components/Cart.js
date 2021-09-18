@@ -8,14 +8,25 @@ const loader = ({ src, width, quality }) => {
     return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
 };
 
-function Cart({ cartMenu, setCartMenu, handleProductQuantity, handleRemoveProduct, handleEmptyCart }) {
+function Cart({
+    cartMenu,
+    show,
+    handleCartTimeout,
+    handleProductQuantity,
+    handleRemoveProduct,
+    handleEmptyCart,
+}) {
     const cart = useCartState();
     const isEmpty = !cart?.line_items.length;
 
     return (
         cartMenu && (
             <>
-                <div className={styles.cartContainer}>
+                <div
+                    className={`${styles.cartContainer} ${
+                        (show && 'transitionOut') || (cartMenu && 'transitionIn')
+                    }`}
+                >
                     <ul>
                         {cart?.line_items.map(product => (
                             <li className={styles.cartItemContainer} key={product.id}>
@@ -65,7 +76,10 @@ function Cart({ cartMenu, setCartMenu, handleProductQuantity, handleRemoveProduc
                         </button>
                     </div>
                 </div>
-                <div className={styles.cartBG} onClick={() => setCartMenu(false)} />
+                <div
+                    className={`${styles.cartBG} ${(show && 'fadeOut') || (cartMenu && 'fadeIn')}`}
+                    onClick={() => handleCartTimeout()}
+                />
             </>
         )
     );

@@ -17,6 +17,7 @@ function App({ merchandise }) {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [cartMenu, setCartMenu] = useState(false);
+    const [show, setShow] = useState(false);
 
     const cart = useCartState();
     const { setCart } = useCartDispatch();
@@ -57,6 +58,18 @@ function App({ merchandise }) {
         setLoading(false);
     };
 
+    const handleCartTimeout = () => {
+        if (cartMenu) {
+            setShow(true);
+            setTimeout(() => {
+                setCartMenu(false);
+                setShow(false);
+            }, 320);
+        } else {
+            setCartMenu(true);
+        }
+    };
+
     useEffect(() => {
         setProducts(merchandise);
         setLoading(false);
@@ -64,14 +77,15 @@ function App({ merchandise }) {
 
     return (
         <>
-            <NavBar itemsInCart={cart?.total_items} setCartMenu={setCartMenu} loading={loading} />
+            <NavBar itemsInCart={cart?.total_items} loading={loading} handleCartTimeout={handleCartTimeout} />
             <Products products={products} loading={loading} addToCart={handleAddProductToCart} />
             <Cart
                 handleProductQuantity={handleProductQuantity}
                 handleRemoveProduct={handleRemoveProduct}
                 handleEmptyCart={handleEmptyCart}
+                show={show}
                 cartMenu={cartMenu}
-                setCartMenu={setCartMenu}
+                handleCartTimeout={handleCartTimeout}
             />
         </>
     );

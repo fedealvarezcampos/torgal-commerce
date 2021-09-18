@@ -23,16 +23,41 @@ function App({ merchandise }) {
 
     const handleAddProductToCart = async (productId, quantity) => {
         setLoading(true);
-        const item = await commerce.cart.add(productId, quantity);
 
-        setCart(item.cart);
+        const { cart } = await commerce.cart.add(productId, quantity);
+
+        setCart(cart);
         setLoading(false);
     };
 
-    // console.log(products);
+    const handleProductQuantity = async (productId, quantity) => {
+        setLoading(true);
+
+        const { cart } = await commerce.cart.update(productId, { quantity });
+
+        setCart(cart);
+        setLoading(false);
+    };
+
+    const handleRemoveProduct = async productId => {
+        setLoading(true);
+
+        const { cart } = await commerce.cart.remove(productId);
+
+        setCart(cart);
+        setLoading(false);
+    };
+
+    const handleEmptyCart = async () => {
+        setLoading(true);
+
+        const { cart } = await commerce.cart.empty();
+
+        setCart(cart);
+        setLoading(false);
+    };
 
     useEffect(() => {
-        // setLoading(true);
         setProducts(merchandise);
         setLoading(false);
     }, []);
@@ -41,7 +66,13 @@ function App({ merchandise }) {
         <>
             <NavBar itemsInCart={cart?.total_items} setCartMenu={setCartMenu} loading={loading} />
             <Products products={products} loading={loading} addToCart={handleAddProductToCart} />
-            <Cart cartMenu={cartMenu} setCartMenu={setCartMenu} />
+            <Cart
+                handleProductQuantity={handleProductQuantity}
+                handleRemoveProduct={handleRemoveProduct}
+                handleEmptyCart={handleEmptyCart}
+                cartMenu={cartMenu}
+                setCartMenu={setCartMenu}
+            />
         </>
     );
 }

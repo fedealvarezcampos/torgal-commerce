@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
+import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
 import { useCartState } from '../context/cart';
 import Image from 'next/image';
 import styles from '../styles/Cart.module.css';
@@ -7,11 +8,11 @@ const loader = ({ src, width, quality }) => {
     return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
 };
 
-function Cart({ cartMenu, setCartMenu }) {
+function Cart({ cartMenu, setCartMenu, handleProductQuantity, handleRemoveProduct, handleEmptyCart }) {
     const cart = useCartState();
     const isEmpty = !cart?.line_items.length;
 
-    const SavedCart = () =>
+    return (
         cartMenu && (
             <>
                 <div className={styles.cartContainer}>
@@ -33,22 +34,41 @@ function Cart({ cartMenu, setCartMenu }) {
                                     <p className={styles.productPrice}>
                                         {product?.line_total?.formatted_with_symbol}
                                     </p>
-                                    <p>{product?.quantity}</p>
+                                    <span className={styles.productQuantity}>
+                                        <BsCaretLeftFill
+                                            onClick={() =>
+                                                handleProductQuantity(product?.id, product?.quantity - 1)
+                                            }
+                                        />
+                                        <p>{product?.quantity}</p>
+                                        <BsCaretRightFill
+                                            onClick={() =>
+                                                handleProductQuantity(product?.id, product?.quantity + 1)
+                                            }
+                                        />
+                                    </span>
                                 </div>
                             </li>
                         ))}
                     </ul>
-                    <p>{cart.subtotal.formatted_with_symbol}</p>
+                    {isEmpty && <div className={styles.noItems}>¡No hay nada en el carro!</div>}
+                    <p className={styles.cartTotalPrice}>
+                        <span>Total:</span>
+                        <span>{cart.subtotal.formatted_with_symbol}</span>
+                    </p>
                     <div className={styles.buttonsContainer}>
-                        <button>CHECKOUT</button>
-                        <button>VACIAR CARRO</button>
+                        <button>
+                            <FaShoppingCart /> CHECKOUT
+                        </button>
+                        <button onClick={() => handleEmptyCart()}>
+                            <BsTrashFill /> VACIAR CARRO
+                        </button>
                     </div>
                 </div>
                 <div className={styles.cartBG} onClick={() => setCartMenu(false)} />
             </>
-        );
-
-    return <div>{isEmpty ? <div>No items</div> : <SavedCart />}</div>;
+        )
+    );
 }
 
 export default Cart;

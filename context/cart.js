@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, useEffect } from 'react';
+import { createContext, useReducer, useContext, useEffect } from 'react';
 
 import { commerce } from '../lib/commerce';
 
@@ -25,15 +25,15 @@ const reducer = (state, action) => {
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => {
-        fetchCart();
-    }, []);
-
     const setCart = payload => dispatch({ type: SET_CART, payload });
 
     const fetchCart = async () => {
         setCart(await commerce.cart.retrieve());
     };
+
+    useEffect(() => {
+        fetchCart();
+    }, []);
 
     return (
         <CartDispatchContext.Provider value={{ setCart }}>

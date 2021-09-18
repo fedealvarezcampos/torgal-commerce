@@ -5,7 +5,7 @@ const loader = ({ src, width, quality }) => {
     return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
 };
 
-const SingleProduct = ({ product, addToCart }) => {
+const SingleProduct = ({ product, addToCart, loading }) => {
     return (
         <>
             <li>
@@ -17,7 +17,7 @@ const SingleProduct = ({ product, addToCart }) => {
                             layout="fill"
                             objectFit="cover"
                             quality={80}
-                            alt="y la bamba"
+                            alt="product image"
                         />
                     </div>
                     <p className={styles.productTitle}>{product?.name}</p>

@@ -1,12 +1,7 @@
 import styles from '../styles/Products.module.css';
 import Product from './SingleProduct';
 
-const products = [
-    { id: 1, name: 'Shoes', price: '3€', description: 'Zapatos locos' },
-    { id: 2, name: 'Pizza', price: '3€', description: 'Pizza loca' },
-];
-
-const Products = ({ products, addToCart }) => {
+const Products = ({ products, addToCart, loading }) => {
     return (
         <main>
             <ul
@@ -14,7 +9,7 @@ const Products = ({ products, addToCart }) => {
                 style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
             >
                 {products.map(product => (
-                    <Product key={product?.id} product={product} addToCart={addToCart} />
+                    <Product key={product?.id} loading={loading} product={product} addToCart={addToCart} />
                 ))}
             </ul>
         </main>

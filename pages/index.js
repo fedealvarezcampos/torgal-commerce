@@ -14,26 +14,34 @@ export async function getStaticProps() {
 }
 
 function App({ merchandise }) {
+    const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
+    const [cartMenu, setCartMenu] = useState(false);
 
     const cart = useCartState();
     const { setCart } = useCartDispatch();
 
     const handleAddProductToCart = async (productId, quantity) => {
+        setLoading(true);
         const item = await commerce.cart.add(productId, quantity);
 
         setCart(item.cart);
+        setLoading(false);
     };
 
+    // console.log(products);
+
     useEffect(() => {
+        // setLoading(true);
         setProducts(merchandise);
+        setLoading(false);
     }, []);
 
     return (
         <>
-            <NavBar itemsInCart={cart?.total_items} />
-            <Products products={products} addToCart={handleAddProductToCart} />
-            {/* <Cart cart={cart} /> */}
+            <NavBar itemsInCart={cart?.total_items} setCartMenu={setCartMenu} loading={loading} />
+            <Products products={products} loading={loading} addToCart={handleAddProductToCart} />
+            <Cart cartMenu={cartMenu} setCartMenu={setCartMenu} />
         </>
     );
 }

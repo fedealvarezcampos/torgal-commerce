@@ -1,14 +1,13 @@
 .container {
     display: grid;
     grid: auto / 1fr 1fr;
-    gap: clamp(1.4rem, 2vw, 2rem);
-    padding: 0;
     justify-self: center;
-    height: auto;
-    width: clamp(40rem, 68vw, 800px);
-    list-style: none;
+    gap: clamp(1.4rem, 2vw, 2rem);
     margin: 0;
-    padding: 2rem 2.2rem 2rem 2.2rem;
+    padding: 2rem 2.1rem 2rem 2.1rem;
+    width: clamp(40rem, 68vw, 800px);
+    height: auto;
+    list-style: none;
     border-radius: 25px;
     border: 8px solid var(--base-font);
     background-position: center center;

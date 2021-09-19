@@ -1,4 +1,5 @@
 import { FaShoppingCart } from 'react-icons/fa';
+import { RiCloseCircleFill } from 'react-icons/ri';
 import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
 import { useCartState } from '../context/cart';
 import Image from 'next/image';
@@ -45,19 +46,22 @@ function Cart({
                                     <p className={styles.productPrice}>
                                         {product?.line_total?.formatted_with_symbol}
                                     </p>
-                                    <span className={styles.productQuantity}>
-                                        <BsCaretLeftFill
-                                            onClick={() =>
-                                                handleProductQuantity(product?.id, product?.quantity - 1)
-                                            }
-                                        />
-                                        <p>{product?.quantity}</p>
-                                        <BsCaretRightFill
-                                            onClick={() =>
-                                                handleProductQuantity(product?.id, product?.quantity + 1)
-                                            }
-                                        />
-                                    </span>
+                                    <div className={styles.cartButtonsContainer}>
+                                        <span className={styles.productQuantity}>
+                                            <BsCaretLeftFill
+                                                onClick={() =>
+                                                    handleProductQuantity(product?.id, product?.quantity - 1)
+                                                }
+                                            />
+                                            <p>{product?.quantity}</p>
+                                            <BsCaretRightFill
+                                                onClick={() =>
+                                                    handleProductQuantity(product?.id, product?.quantity + 1)
+                                                }
+                                            />
+                                        </span>
+                                        <RiCloseCircleFill onClick={() => handleRemoveProduct(product?.id)} />
+                                    </div>
                                 </div>
                             </li>
                         ))}
@@ -67,7 +71,7 @@ function Cart({
                         <span>Total:</span>
                         <span>{cart.subtotal.formatted_with_symbol}</span>
                     </p>
-                    <div className={styles.buttonsContainer}>
+                    <div className={styles.checkoutButtonsContainer}>
                         <button>
                             <FaShoppingCart /> CHECKOUT
                         </button>

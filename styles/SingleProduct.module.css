@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    width: clamp(240px, 28vw, 320px);
     height: 100%;
-    padding: 1.8rem 0.6rem 1.8rem 0.6rem;
+    padding: 1.8rem 1.6rem 1.8rem 1.6rem;
     border-radius: 20px;
     box-sizing: border-box;
     background-color: var(--dark-item);
@@ -21,8 +22,8 @@
 
 .productImage {
     position: relative;
-    height: 12.8rem;
-    width: 75%;
+    height: 10rem;
+    width: 10rem;
     border-radius: 24px;
     border: 8px solid var(--light-green);
     background-size: cover;

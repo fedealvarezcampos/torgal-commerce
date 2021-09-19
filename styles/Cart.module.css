@@ -89,15 +89,6 @@
     background-color: var(--dark-item);
 }
 
-.productQuantity svg {
-    cursor: pointer;
-}
-
-.productQuantity svg:hover {
-    color: var(--light-green);
-    transition: color 250ms;
-}
-
 .cartTotalPrice {
     display: flex;
     flex-direction: column;
@@ -117,7 +108,29 @@
     padding-left: 0.2rem;
 }
 
-.buttonsContainer {
+.cartButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cartButtonsContainer svg {
+    cursor: pointer;
+}
+
+.cartButtonsContainer > svg:last-child {
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color: var(--dark-item);
+}
+
+.cartButtonsContainer svg:hover {
+    color: var(--light-green);
+    transition: color 250ms;
+}
+
+.checkoutButtonsContainer {
     display: flex;
     flex-direction: column-reverse;
     padding-top: 0.4rem;
@@ -126,7 +139,7 @@
     gap: 16px;
 }
 
-.buttonsContainer > button > svg {
+.checkoutButtonsContainer > button > svg {
     font-size: 1.1rem;
     vertical-align: sub;
 }

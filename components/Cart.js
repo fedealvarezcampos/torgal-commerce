@@ -2,6 +2,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
 import { useCartState } from '../context/cart';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Cart.module.css';
 
@@ -72,9 +73,11 @@ function Cart({
                         <span>{cart.subtotal.formatted_with_symbol}</span>
                     </p>
                     <div className={styles.checkoutButtonsContainer}>
-                        <button>
-                            <FaShoppingCart /> CHECKOUT
-                        </button>
+                        <Link href="/checkout">
+                            <button onClick={() => handleCartTimeout()}>
+                                <FaShoppingCart /> CHECKOUT
+                            </button>
+                        </Link>
                         <button onClick={() => handleEmptyCart()}>
                             <BsTrashFill /> VACIAR CARRO
                         </button>

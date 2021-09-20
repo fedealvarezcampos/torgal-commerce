@@ -1,0 +1,40 @@
+.reviewContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1.6rem 1.9rem 1.6rem 1.9rem;
+    border-radius: 20px;
+    background-color: var(--dark-item);
+}
+
+.reviewContainer ul {
+    margin: 0;
+}
+
+.reviewContainer span {
+    padding: 0;
+    font-size: 1rem;
+}
+
+.reviewContainer span:last-child {
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 6px;
+    list-style: none;
+}
+
+.itemContainer li {
+    display: flex;
+    flex-direction: column;
+}
+
+.totalContainer {
+    display: flex;
+    flex-direction: column;
+}

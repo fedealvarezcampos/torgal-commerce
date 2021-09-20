@@ -145,5 +145,20 @@
 }
 
 .noItems {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-style: italic;
+    align-items: center;
+    gap: 16px;
     font-size: 1.8rem;
+}
+
+.travolta {
+    height: 10rem;
+    width: 80%;
+    border-radius: 20px;
+    border: 6px solid var(--light-green);
+    background-position: center center;
+    background-image: url(../public/images/travolta.gif);
 }

@@ -67,21 +67,30 @@ function Cart({
                             </li>
                         ))}
                     </ul>
-                    {isEmpty && <div className={styles.noItems}>¡No hay nada en el carro!</div>}
-                    <p className={styles.cartTotalPrice}>
-                        <span>Total:</span>
-                        <span>{cart.subtotal.formatted_with_symbol}</span>
-                    </p>
-                    <div className={styles.checkoutButtonsContainer}>
-                        <Link href="/checkout">
-                            <button onClick={() => handleCartTimeout()}>
-                                <FaShoppingCart /> CHECKOUT
-                            </button>
-                        </Link>
-                        <button onClick={() => handleEmptyCart()}>
-                            <BsTrashFill /> VACIAR CARRO
-                        </button>
-                    </div>
+                    {isEmpty && (
+                        <div className={styles.noItems}>
+                            <span>Aquí no hay nada.</span>
+                            <div className={styles.travolta} />
+                        </div>
+                    )}
+                    {!isEmpty && (
+                        <>
+                            <p className={styles.cartTotalPrice}>
+                                <span>Total:</span>
+                                <span>{cart.subtotal.formatted_with_symbol}</span>
+                            </p>
+                            <div className={styles.checkoutButtonsContainer}>
+                                <Link href="/checkout">
+                                    <button onClick={() => handleCartTimeout()}>
+                                        <FaShoppingCart /> CHECKOUT
+                                    </button>
+                                </Link>
+                                <button onClick={() => handleEmptyCart()}>
+                                    <BsTrashFill /> VACIAR CARRO
+                                </button>
+                            </div>
+                        </>
+                    )}
                 </div>
                 <div
                     className={`${styles.cartBG} ${(show && 'fadeOut') || (cartMenu && 'fadeIn')}`}

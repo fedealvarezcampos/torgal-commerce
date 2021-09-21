@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
 import { useCartState } from '../context/cart';
+import { Spinner2 } from './spinner';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Cart.module.css';
@@ -17,9 +19,18 @@ function Cart({
     handleProductQuantity,
     handleRemoveProduct,
     handleEmptyCart,
+    loading,
 }) {
     const cart = useCartState();
     const isEmpty = !cart?.line_items.length;
+
+    const [emptyCartLabel, setEmptyCartLabel] = useState('VACIAR CARRO');
+
+    const handleCartEmptying = async () => {
+        setEmptyCartLabel('VACIANDO...');
+        await handleEmptyCart();
+        setEmptyCartLabel(emptyCartLabel);
+    };
 
     return (
         cartMenu && (
@@ -85,10 +96,16 @@ function Cart({
                                         <FaShoppingCart /> CHECKOUT
                                     </button>
                                 </Link>
-                                <button onClick={() => handleEmptyCart()}>
-                                    <BsTrashFill /> VACIAR CARRO
+                                <button onClick={() => handleCartEmptying()}>
+                                    <BsTrashFill /> {emptyCartLabel}
                                 </button>
                             </div>
+                            {loading && (
+                                <div className={`${styles.cartSpinner} fadeIn2`}>
+                                    CARGANDO
+                                    <Spinner2 />
+                                </div>
+                            )}
                         </>
                     )}
                 </div>

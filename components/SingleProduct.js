@@ -1,11 +1,21 @@
 import styles from '../styles/SingleProduct.module.css';
 import Image from 'next/image';
+import { useRef, useState } from 'react';
 
 const loader = ({ src, width, quality }) => {
     return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
 };
 
-const SingleProduct = ({ product, addToCart, loading }) => {
+const SingleProduct = ({ product, addToCart, setCartMenu }) => {
+    const [buttonLabel, setButtonLabel] = useState('AÑADIR AL CARRO');
+
+    const handleAddToCart = async product => {
+        setButtonLabel('AÑADIENDO...');
+        await addToCart(product);
+        setCartMenu(true);
+        setButtonLabel(buttonLabel);
+    };
+
     return (
         <>
             <li>
@@ -14,8 +24,10 @@ const SingleProduct = ({ product, addToCart, loading }) => {
                         <Image
                             loader={loader}
                             src={product?.media?.source}
-                            layout="fill"
+                            layout="intrinsic"
                             objectFit="cover"
+                            width="400"
+                            height="400"
                             quality={80}
                             alt="product image"
                         />
@@ -26,7 +38,7 @@ const SingleProduct = ({ product, addToCart, loading }) => {
                         className={styles.productDescription}
                         dangerouslySetInnerHTML={{ __html: product?.description }}
                     ></span>
-                    <button onClick={() => addToCart(product.id, 1)}>AÑADIR AL CARRO</button>
+                    <button onClick={() => handleAddToCart(product.id)}>{buttonLabel}</button>
                 </div>
             </li>
         </>

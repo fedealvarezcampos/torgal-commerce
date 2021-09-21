@@ -1,4 +1,3 @@
-import Spinner from './spinner';
 import styles from '../styles/ReviewItems.module.css';
 
 function ReviewItems({ token, total }) {

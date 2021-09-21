@@ -1,5 +1,5 @@
 import styles from '../styles/NavBar.module.css';
-import Spinner from './spinner';
+import { Spinner } from './spinner';
 import Link from 'next/link';
 
 function NavBar({ cart, loading, handleCartTimeout }) {

@@ -13,7 +13,7 @@ export async function getStaticProps() {
     };
 }
 
-function Index({ merchandise, loading, setLoading }) {
+function Index({ merchandise, loading, setLoading, setCartMenu }) {
     const [products, setProducts] = useState([]);
 
     const { setCart } = useCartDispatch();
@@ -34,7 +34,12 @@ function Index({ merchandise, loading, setLoading }) {
 
     return (
         <>
-            <Products products={products} loading={loading} addToCart={handleAddProductToCart} />
+            <Products
+                products={products}
+                loading={loading}
+                addToCart={handleAddProductToCart}
+                setCartMenu={setCartMenu}
+            />
         </>
     );
 }

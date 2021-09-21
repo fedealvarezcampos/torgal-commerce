@@ -1,11 +1,8 @@
-import { useState, useEffect } from 'react';
 import { useCartState } from '../context/cart';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { commerce } from '../lib/commerce';
 import { ReviewItems } from '.';
 import styles from '../styles/PaymentForm.module.css';
-import Spinner from './spinner';
 
 const stripePromise = loadStripe('...');
 

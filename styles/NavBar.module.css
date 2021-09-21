@@ -22,6 +22,12 @@
     cursor: pointer;
 }
 
+.logo:hover {
+    transform: scale(1.03);
+    transition: transform 250ms ease-in-out;
+    will-change: contents;
+}
+
 .logo * {
     height: auto;
     width: 100%;
@@ -32,6 +38,7 @@
     cursor: pointer;
 }
 
+.cart :hover,
 .cart img:hover {
     transform: scale(1.05);
     filter: brightness(0.7) sepia(1) hue-rotate(340deg) saturate(0.6);

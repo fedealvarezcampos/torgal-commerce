@@ -1,7 +1,7 @@
 import styles from '../styles/Products.module.css';
-import Product from './SingleProduct';
+import SingleProduct from './SingleProduct';
 
-const Products = ({ products, addToCart, loading }) => {
+const Products = ({ products, addToCart, loading, setCartMenu }) => {
     return (
         <main>
             <ul
@@ -9,7 +9,13 @@ const Products = ({ products, addToCart, loading }) => {
                 style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
             >
                 {products.map(product => (
-                    <Product key={product?.id} loading={loading} product={product} addToCart={addToCart} />
+                    <SingleProduct
+                        key={product?.id}
+                        loading={loading}
+                        product={product}
+                        addToCart={addToCart}
+                        setCartMenu={setCartMenu}
+                    />
                 ))}
             </ul>
         </main>

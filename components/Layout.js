@@ -12,8 +12,8 @@ export default function Layout({ children, loading, setLoading, handleCartTimeou
         setLoading(true);
 
         const { cart } = await commerce.cart.update(productId, { quantity });
-
         setCart(cart);
+
         setLoading(false);
     };
 
@@ -21,18 +21,14 @@ export default function Layout({ children, loading, setLoading, handleCartTimeou
         setLoading(true);
 
         const { cart } = await commerce.cart.remove(productId);
-
         setCart(cart);
+
         setLoading(false);
     };
 
     const handleEmptyCart = async () => {
-        setLoading(true);
-
         const { cart } = await commerce.cart.empty();
-
         setCart(cart);
-        setLoading(false);
     };
 
     return (
@@ -51,6 +47,7 @@ export default function Layout({ children, loading, setLoading, handleCartTimeou
                 handleRemoveProduct={handleRemoveProduct}
                 handleEmptyCart={handleEmptyCart}
                 cartMenu={cartMenu}
+                loading={loading}
                 show={show}
                 handleCartTimeout={handleCartTimeout}
             />

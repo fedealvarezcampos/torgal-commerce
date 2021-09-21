@@ -17,4 +17,14 @@ function Spinner() {
     );
 }
 
-export default Spinner;
+function Spinner2() {
+    return (
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    );
+}
+
+export { Spinner, Spinner2 };

@@ -3,7 +3,6 @@ import { useCartState } from '../context/cart';
 import { commerce } from '../lib/commerce';
 import { DetailsForm, PaymentForm } from '.';
 import styles from '../styles/Checkout.module.css';
-import Spinner from './spinner';
 
 function Checkout() {
     const cart = useCartState();

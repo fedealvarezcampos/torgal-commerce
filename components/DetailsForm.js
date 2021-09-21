@@ -140,7 +140,7 @@ function DetailsForm({ token, next }) {
                 <input required placeholder="Ciudad" value={city} onChange={e => setCity(e.target.value)} />
             </label>
             <label>
-                <span>Provincia</span>
+                <span>Envío</span>
                 <br />
                 <select value={shippingOption} onChange={e => setShippingOption(e.target.value)}>
                     {options?.map(option => (

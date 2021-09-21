@@ -19,6 +19,7 @@
     gap: 4px;
     align-items: center;
     width: 13.4rem;
+    cursor: pointer;
 }
 
 .logo * {

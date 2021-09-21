@@ -21,7 +21,7 @@ function Checkout() {
                 const token = !isEmpty && (await commerce.checkout.generateToken(cart?.id, { type: 'cart' }));
                 token && setCheckoutToken(token);
             } catch (error) {
-                console.log(error);
+                // console.log(error);
             }
         };
 
@@ -36,7 +36,7 @@ function Checkout() {
         nextStage();
     };
 
-    console.log(shippingData);
+    // console.log(shippingData);
 
     return (
         <>

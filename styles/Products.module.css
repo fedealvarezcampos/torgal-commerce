@@ -18,8 +18,9 @@
 
 @media (max-width: 650px) {
     .container {
-        margin: 1.8rem 0 1.8rem 0;
-        padding: 1.6rem 1rem 1.6rem 1rem;
+        margin: 1.6rem 0 1.6rem 0;
+        padding: 1.2rem 0.8rem 1.2rem 0.8rem;
         border: 6px solid var(--light-green);
+        width: 72vw;
     }
 }

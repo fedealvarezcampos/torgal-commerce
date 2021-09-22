@@ -217,4 +217,16 @@
     .cartButtonsContainer {
         padding-top: 2px;
     }
+
+    .noItems {
+        gap: 12px;
+        font-size: 1.2rem;
+    }
+
+    .travolta {
+        height: 9rem;
+        width: 86%;
+        border-radius: 16px;
+        border: 6px solid var(--light-green);
+    }
 }

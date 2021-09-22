@@ -1,11 +1,11 @@
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' *.youtube.com *.vercel.app *.vercel.com *.chec.io *.stripe.com;
+    script-src 'self' *.vercel.app *.vercel.com *.chec.io *.stripe.com;
     child-src *.youtube.com *.google.com *.stripe.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
-    img-src * blob: data:;
+    img-src 'self' *.chec.io blob: data:;
     media-src 'none';
-    font-src 'self' https://fonts.gstatic.com;
+    font-src 'self' *.gstatic.com;
     connect-src *;
 `;
 
@@ -13,6 +13,10 @@ const securityHeaders = [
     {
         key: 'Content-Security-Policy',
         value: ContentSecurityPolicy.replace(/\n/g, ''),
+    },
+    {
+        key: 'Access-Control-Allow-Origin',
+        value: '*.chec.io',
     },
     {
         key: 'Referrer-Policy',

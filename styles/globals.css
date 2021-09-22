@@ -17,7 +17,8 @@
     --cream: #f4dba4;
 }
 
-body {
+body,
+html {
     margin: 0;
     padding: 0;
     color: var(--base-font);
@@ -31,13 +32,11 @@ body {
 
 main {
     display: grid;
-    align-content: start;
     box-sizing: border-box;
     font-family: 'Cabin', 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     hyphens: auto;
     line-height: 1.65;
     text-align: center;
-    margin: 2rem auto;
     max-width: 100vw;
 }
 

@@ -3,14 +3,16 @@
     flex: auto;
     flex-wrap: wrap;
     justify-self: center;
+    align-self: center;
     place-content: center;
     gap: clamp(1.4rem, 2vw, 2rem);
-    margin: 0;
+    margin: 3rem 0 3rem 0;
     padding: 2rem 1.6rem 2rem 1.6rem;
     width: clamp(16rem, 60vw, 700px);
+    height: fit-content;
     list-style: none;
-    border-radius: 25px;
-    border: 8px solid var(--base-font);
+    border-radius: 20px;
+    border: 8px solid var(--light-green);
     background-position: center center;
     background-color: var(--wallpaper);
 }

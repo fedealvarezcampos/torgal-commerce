@@ -35,12 +35,12 @@
 
 .cart {
     height: 2.4rem;
-    cursor: pointer;
+    padding-right: 0.2rem;
 }
 
-.cart :hover,
-.cart img:hover {
-    transform: scale(1.05);
+.cart:hover * {
+    cursor: pointer;
+    transform: scale(1.02);
     filter: brightness(0.7) sepia(1) hue-rotate(340deg) saturate(0.6);
     transition: all 250ms;
     will-change: auto;

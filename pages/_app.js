@@ -29,16 +29,18 @@ function TorgalCommerce({ Component, pageProps }) {
                 cartMenu={cartMenu}
                 handleCartTimeout={handleCartTimeout}
             >
-                <Component
-                    {...pageProps}
-                    show={show}
-                    setShow={setShow}
-                    loading={loading}
-                    setLoading={setLoading}
-                    cartMenu={cartMenu}
-                    setCartMenu={setCartMenu}
-                    handleCartTimeout={handleCartTimeout}
-                />
+                <main>
+                    <Component
+                        {...pageProps}
+                        show={show}
+                        setShow={setShow}
+                        loading={loading}
+                        setLoading={setLoading}
+                        cartMenu={cartMenu}
+                        setCartMenu={setCartMenu}
+                        handleCartTimeout={handleCartTimeout}
+                    />
+                </main>
             </Layout>
         </CartProvider>
     );

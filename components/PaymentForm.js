@@ -69,7 +69,7 @@ function PaymentForm({ token, goBack, next, total, shippingData, handleCheckout 
                 },
             };
 
-            console.log(orderDetails);
+            // console.log(orderDetails);
 
             handleCheckout(token.id, orderDetails);
 

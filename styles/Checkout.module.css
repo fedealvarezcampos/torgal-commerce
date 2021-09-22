@@ -1,17 +1,17 @@
 .checkoutContainer {
     display: grid;
-    height: calc(100vh - 8rem);
-    align-items: center;
-    justify-items: center;
+    place-content: center;
+    align-self: center;
     width: 100%;
+    margin-top: 12vh;
 }
 
 .formContainer {
     display: flex;
     place-content: center;
     width: 36rem;
-    height: 29rem;
-    padding: 2rem 1.8rem 2rem 1.8rem;
+    height: 30rem;
+    padding: 2rem 1.8rem 2.2rem 1.8rem;
     border-radius: 22px;
     border: 8px solid var(--base-font);
     font-family: 'Cabin', sans-serif;
@@ -26,10 +26,8 @@
 
 .formContainer form {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
-    margin-top: 0.25rem;
     width: 100%;
     gap: 25px;
 }

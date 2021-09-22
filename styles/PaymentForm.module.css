@@ -7,6 +7,8 @@
 
 .paymentContainer form {
     align-content: unset;
+    display: flex;
+    flex-direction: column;
     padding: 1.6rem 1.9rem 1.6rem 1.9rem;
     width: 32rem;
     gap: 20px;

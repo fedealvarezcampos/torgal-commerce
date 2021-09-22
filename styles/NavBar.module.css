@@ -40,10 +40,10 @@
 
 .cart:hover * {
     cursor: pointer;
-    transform: scale(1.02);
-    filter: brightness(0.7) sepia(1) hue-rotate(340deg) saturate(0.6);
+    transform: scale(1.06);
+    filter: brightness(0.8) saturate(0.8);
     transition: all 250ms;
-    will-change: auto;
+    will-change: contents;
 }
 
 .cart span {

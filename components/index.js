@@ -6,3 +6,4 @@ export { default as Layout } from './Layout';
 export { default as DetailsForm } from './DetailsForm';
 export { default as PaymentForm } from './PaymentForm';
 export { default as ReviewItems } from './ReviewItems';
+export { default as Confirmation } from './Confirmation';

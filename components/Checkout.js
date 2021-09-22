@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useCartDispatch, useCartState } from '../context/cart';
 import { commerce } from '../lib/commerce';
-import { DetailsForm, PaymentForm } from '.';
+import { DetailsForm, PaymentForm, Confirmation } from '.';
 import styles from '../styles/Checkout.module.css';
 
 function Checkout() {
@@ -56,7 +56,7 @@ function Checkout() {
         nextStage();
     };
 
-    console.log(shippingData);
+    // console.log(shippingData);
 
     return (
         <>
@@ -74,7 +74,7 @@ function Checkout() {
                             next={next}
                         />
                     )}
-                    {activeStage === 2 && <div>CONFIRMADO</div>}
+                    {activeStage === 2 && <Confirmation order={order} />}
                 </div>
             </div>
         </>

@@ -177,3 +177,44 @@
     background-position: center center;
     background-image: url(../public/images/travolta.gif);
 }
+
+@media (max-width: 650px) {
+    .cartContainer {
+        height: calc(100vh - 9.4rem);
+        width: 12rem;
+        padding: 1.2rem;
+        border-left: 6px solid var(--base-font);
+    }
+
+    .cartItemContainer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem 0.9rem 1rem 0.9rem;
+        border-radius: 14px;
+        border: 6px solid var(--light-green);
+    }
+
+    .cartDetailsContainer {
+        gap: 2px;
+    }
+
+    .productTitle {
+        font-size: 1.1rem;
+    }
+
+    .productPrice {
+        padding-left: 2px;
+        font-size: 1.1rem;
+    }
+
+    .productImage {
+        align-self: flex-start;
+        height: 6rem;
+        width: 6rem;
+        border: 6px solid var(--light-green);
+    }
+
+    .cartButtonsContainer {
+        padding-top: 2px;
+    }
+}

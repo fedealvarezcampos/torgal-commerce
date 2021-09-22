@@ -9,8 +9,8 @@
     align-content: unset;
     display: flex;
     flex-direction: column;
-    padding: 1.6rem 1.9rem 1.6rem 1.9rem;
-    width: 32rem;
+    padding: 1.6rem 1.4rem 1.6rem 1.9rem;
+    width: 32.6rem;
     gap: 20px;
     border-radius: 16px;
     background-color: var(--dark-item);
@@ -19,4 +19,18 @@
 .buttonsContainer {
     display: flex;
     gap: 18px;
+}
+
+@media (max-width: 650px) {
+    .paymentContainer form {
+        align-self: center;
+        padding: 1.6rem 1.9rem 1.6rem 1.9rem;
+        width: 85%;
+        gap: 10px;
+    }
+
+    .paymentContainer button {
+        font-size: 10.5px;
+        padding: 0.5rem;
+    }
 }

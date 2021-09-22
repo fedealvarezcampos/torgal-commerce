@@ -72,3 +72,18 @@
 .cart .loader {
     position: relative;
 }
+
+@media (max-width: 650px) {
+    .logo {
+        width: 11.4rem;
+    }
+
+    .cart {
+        height: 2rem;
+    }
+
+    .cart span {
+        height: 0.8rem;
+        width: 0.8rem;
+    }
+}

@@ -14,10 +14,9 @@ function PaymentForm({ token, goBack, next, total, shippingData, handleCheckout 
         style: {
             base: {
                 iconColor: '#ffffff',
-                fontSize: '18px',
+                fontSize: '15px',
                 fontFamily: 'Cabin, sans-serif',
                 fontWeight: '600',
-                lineHeight: '1',
                 color: '#E9E9E9',
                 '::placeholder': {
                     color: '#CCCCCC',

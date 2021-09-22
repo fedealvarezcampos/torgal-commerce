@@ -79,3 +79,34 @@
     border: 5px solid var(--light-green);
     box-sizing: border-box;
 }
+
+@media (max-width: 650px) {
+    .checkoutContainer {
+        display: grid;
+        place-content: center;
+        align-self: center;
+        width: 100%;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+    }
+
+    .checkoutContainer form {
+        gap: 10px;
+    }
+
+    .checkoutContainer form button {
+        margin-top: 0.9rem;
+    }
+
+    .formContainer {
+        width: 70vw;
+        height: fit-content;
+        padding: 1.2rem 1.6rem 1.6rem 1.6rem;
+        border-radius: 22px;
+        border: 8px solid var(--base-font);
+    }
+
+    .formContainer label {
+        width: 100%;
+    }
+}

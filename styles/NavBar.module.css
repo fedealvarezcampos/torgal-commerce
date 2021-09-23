@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed !important;
     border-bottom: 8px solid var(--base-font);
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {

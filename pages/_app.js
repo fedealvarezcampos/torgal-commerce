@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { CartProvider } from '../context/cart';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout } from '../components';
 
 function TorgalCommerce({ Component, pageProps }) {
@@ -19,6 +19,11 @@ function TorgalCommerce({ Component, pageProps }) {
             setCartMenu(true);
         }
     };
+
+    useEffect(() => {
+        cartMenu && document.body.setAttribute('style', `overflow: hidden;`);
+        !cartMenu && document.body.removeAttribute('style', `overflow: hidden;`);
+    }, [cartMenu]);
 
     return (
         <CartProvider>

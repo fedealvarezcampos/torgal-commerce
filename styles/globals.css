@@ -99,6 +99,18 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-item);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--wallpaper);
+}
+
 /** loader */
 
 .sk-circle {

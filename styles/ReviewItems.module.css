@@ -43,9 +43,14 @@
 }
 
 @media (max-width: 650px) {
-    .container {
-        margin: 1.8rem 0 1.8rem 0;
-        padding: 1.6rem 1rem 1.6rem 1rem;
-        border: 6px solid var(--light-green);
+    .reviewContainer {
+        align-self: center;
+        width: 90%;
+        gap: 10px;
+        padding: 1.4rem 1.5rem 1.4rem 1.4rem;
+    }
+
+    .reviewContainer span:last-child {
+        font-size: 1rem;
     }
 }

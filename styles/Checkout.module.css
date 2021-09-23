@@ -80,6 +80,12 @@
     box-sizing: border-box;
 }
 
+.noItems {
+    place-self: center;
+    font-size: clamp(1.4rem, 3vw, 3rem);
+    margin-bottom: -0.4rem;
+}
+
 @media (max-width: 650px) {
     .checkoutContainer {
         display: grid;
@@ -101,7 +107,7 @@
     .formContainer {
         width: 70vw;
         height: fit-content;
-        padding: 1.2rem 1.6rem 1.6rem 1.6rem;
+        padding: 1.4rem 1.6rem 1.4rem 1.6rem;
         border-radius: 22px;
         border: 8px solid var(--base-font);
     }

@@ -62,19 +62,25 @@ function Checkout() {
         <>
             <div className={styles.checkoutContainer}>
                 <div className={styles.formContainer}>
-                    {activeStage === 0 && <DetailsForm token={checkoutToken} next={next} />}
-                    {activeStage === 1 && (
-                        <PaymentForm
-                            token={checkoutToken}
-                            shippingData={shippingData}
-                            handleCheckout={handleCheckout}
-                            total={totalPlusShipping}
-                            token={checkoutToken}
-                            goBack={previousStage}
-                            next={next}
-                        />
+                    {isEmpty ? (
+                        <div className={styles.noItems}>¡No tienes nada en el carro!</div>
+                    ) : (
+                        <>
+                            {activeStage === 0 && <DetailsForm token={checkoutToken} next={next} />}
+                            {activeStage === 1 && (
+                                <PaymentForm
+                                    token={checkoutToken}
+                                    shippingData={shippingData}
+                                    handleCheckout={handleCheckout}
+                                    total={totalPlusShipping}
+                                    token={checkoutToken}
+                                    goBack={previousStage}
+                                    next={next}
+                                />
+                            )}
+                            {activeStage === 2 && <Confirmation order={order} />}
+                        </>
                     )}
-                    {activeStage === 2 && <Confirmation order={order} />}
                 </div>
             </div>
         </>

@@ -1,5 +1,5 @@
-import styles from '../styles/Products.module.css';
 import SingleProduct from './SingleProduct';
+import styles from '../styles/Products.module.css';
 
 const Products = ({ products, addToCart, loading, setCartMenu }) => {
     return (

@@ -1,6 +1,6 @@
-import styles from '../styles/NavBar.module.css';
-import { Spinner } from './spinner';
 import Link from 'next/link';
+import { Spinner } from './spinner';
+import styles from '../styles/NavBar.module.css';
 
 function NavBar({ cart, loading, handleCartTimeout }) {
     const itemsInCart = cart?.total_items;

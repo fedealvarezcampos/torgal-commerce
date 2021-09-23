@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { useCartState } from '../context/cart';
+import Link from 'next/link';
+import Image from 'next/image';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
-import { useCartState } from '../context/cart';
 import { Spinner2 } from './spinner';
-import Link from 'next/link';
-import Image from 'next/image';
 import styles from '../styles/Cart.module.css';
 
 const loader = ({ src, width, quality }) => {

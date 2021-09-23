@@ -1,6 +1,6 @@
-import styles from '../styles/Confirmation.module.css';
-import { Spinner2 } from './spinner';
 import Link from 'next/link';
+import { Spinner2 } from './spinner';
+import styles from '../styles/Confirmation.module.css';
 
 const Confirmation = ({ order }) => {
     return (

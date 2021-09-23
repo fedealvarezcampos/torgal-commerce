@@ -1,8 +1,8 @@
-import styles from '../styles/layout.module.css';
-import Head from 'next/head';
 import { commerce } from '../lib/commerce';
+import Head from 'next/head';
 import { useCartDispatch, useCartState } from '../context/cart';
 import { NavBar, Cart } from '.';
+import styles from '../styles/layout.module.css';
 
 export default function Layout({ children, loading, setLoading, handleCartTimeout, show, cartMenu }) {
     const cart = useCartState();

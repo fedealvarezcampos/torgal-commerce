@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import styles from '../styles/DetailsForm.module.css';
 import { commerce } from '../lib/commerce';
 
 function DetailsForm({ token, next }) {
@@ -9,6 +8,8 @@ function DetailsForm({ token, next }) {
     const [email, setEmail] = useState('');
     const [city, setCity] = useState('');
     const [postalCode, setPostalCode] = useState('');
+    const regexNumber = /^[0-9\b]+$/;
+
     const [shippingSubcategories, setShippingSubcategories] = useState([]);
     const [shippingSubcategory, setShippingSubcategory] = useState('');
     const [shippingOptions, setShippingOptions] = useState([]);
@@ -18,12 +19,11 @@ function DetailsForm({ token, next }) {
         id: code,
         label: name,
     }));
+
     const options = shippingOptions?.map(shipOpt => ({
         id: shipOpt?.id,
         label: `${shipOpt?.description} - (${shipOpt?.price.formatted_with_symbol})`,
     }));
-
-    const [completed, setCompleted] = useState(false);
 
     const fetchShippigsSubs = async () => {
         const { subdivisions } = await commerce.services.localeListSubdivisions('ES');
@@ -48,10 +48,6 @@ function DetailsForm({ token, next }) {
     useEffect(() => {
         fetchShippingOptions(token?.id, 'ES', shippingSubcategory);
     }, [token]);
-
-    if (completed) {
-        return <Redirect to="/" />;
-    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -120,7 +116,10 @@ function DetailsForm({ token, next }) {
                     maxLength="5"
                     placeholder="Código postal (5 cifras)"
                     value={postalCode}
-                    onChange={e => setPostalCode(e.target.value)}
+                    onChange={e =>
+                        (e.target.value === '' || regexNumber.test(e.target.value)) &&
+                        setPostalCode(e.target.value)
+                    }
                 />
             </label>
             <label>

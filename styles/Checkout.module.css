@@ -27,13 +27,14 @@
 .formContainer form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-content: space-around;
     width: 100%;
-    gap: 25px;
+    gap: 18px;
 }
 
 .formContainer form button {
-    margin-top: 0.2rem;
+    margin-top: 0.6rem;
     justify-self: center;
 }
 
@@ -43,10 +44,6 @@
 
 .formContainer p {
     margin: 0;
-}
-
-.formContainer button {
-    margin-top: 0.8rem;
 }
 
 .formContainer span {

@@ -74,12 +74,22 @@
 }
 
 @media (max-width: 650px) {
+    .navBar {
+        padding: 1.2rem 1.3rem 1.2rem 1.3rem;
+        height: 2.6rem;
+    }
+
     .logo {
-        width: 11.4rem;
+        width: 10.6rem;
     }
 
     .cart {
-        height: 2rem;
+        height: 1.9rem;
+    }
+
+    .cart span {
+        right: 1rem;
+        bottom: 2.6rem;
     }
 
     .cart span {

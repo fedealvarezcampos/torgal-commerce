@@ -180,8 +180,9 @@
 
 @media (max-width: 650px) {
     .cartContainer {
-        height: calc(100vh - 9.4rem);
+        height: calc(100vh - 7.9rem);
         width: 12rem;
+        top: 5.5rem;
         padding: 1.2rem;
         border-left: 6px solid var(--base-font);
     }
@@ -192,6 +193,10 @@
         padding: 1rem 0.9rem 1rem 0.9rem;
         border-radius: 14px;
         border: 6px solid var(--light-green);
+    }
+
+    .cartBG {
+        top: 5.5rem;
     }
 
     .cartDetailsContainer {
@@ -216,6 +221,10 @@
 
     .cartButtonsContainer {
         padding-top: 2px;
+    }
+
+    .checkoutButtonsContainer button {
+        font-size: 0.8rem;
     }
 
     .noItems {

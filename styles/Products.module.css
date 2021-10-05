@@ -7,7 +7,7 @@
     gap: clamp(1.4rem, 2vw, 2rem);
     margin: 3rem 0 3rem 0;
     padding: 2rem 1.6rem 2rem 1.6rem;
-    width: clamp(16rem, 60vw, 700px);
+    width: clamp(43rem, 60vw, 700px);
     height: fit-content;
     list-style: none;
     border-radius: 20px;
@@ -16,7 +16,7 @@
     background-color: var(--wallpaper);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
     .container {
         margin: 1.6rem 0 1.6rem 0;
         padding: 1.2rem 0.8rem 1.2rem 0.8rem;

@@ -23,7 +23,7 @@ const SingleProduct = ({ product, addToCart, setCartMenu, handleModal }) => {
                 <div className={styles.container}>
                     <motion.div
                         className={styles.productImage}
-                        whileHover={{ scale: 1.01 }}
+                        whileHover={{ scale: 1.02 }}
                         onClick={() => handleModal(product, product?.id)}
                     >
                         <Image
@@ -38,7 +38,7 @@ const SingleProduct = ({ product, addToCart, setCartMenu, handleModal }) => {
                         />
                     </motion.div>
                     <motion.p
-                        whileHover={{ scale: 1.02, color: 'var(--light-green)' }}
+                        whileHover={{ scale: 1.03, color: 'var(--light-green)' }}
                         className={styles.productTitle}
                         onClick={() => handleModal(product, product?.id)}
                     >

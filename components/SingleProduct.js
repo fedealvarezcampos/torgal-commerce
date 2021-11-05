@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from '../styles/SingleProduct.module.css';
 
-const loader = ({ src, width, quality }) => {
-    return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
-};
-
 const SingleProduct = ({ product, addToCart, setCartMenu, handleModal }) => {
     const [buttonLabel, setButtonLabel] = useState('AÑADIR AL CARRO');
 
@@ -27,7 +23,7 @@ const SingleProduct = ({ product, addToCart, setCartMenu, handleModal }) => {
                         onClick={() => handleModal(product, product?.id)}
                     >
                         <Image
-                            loader={loader}
+                            // loader={loader}
                             src={product?.media?.source}
                             layout="intrinsic"
                             objectFit="cover"

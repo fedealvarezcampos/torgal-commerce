@@ -8,10 +8,6 @@ import { BsCaretLeftFill, BsCaretRightFill, BsTrashFill } from 'react-icons/bs';
 import { Spinner2 } from './spinner';
 import styles from '../styles/Cart.module.css';
 
-const loader = ({ src, width, quality }) => {
-    return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
-};
-
 function Cart({
     cartMenu,
     show,
@@ -45,7 +41,7 @@ function Cart({
                             <li className={styles.cartItemContainer} key={product.id}>
                                 <div className={styles.productImage}>
                                     <Image
-                                        loader={loader}
+                                        // loader={loader}
                                         src={product?.media?.source}
                                         layout="fill"
                                         objectFit="cover"

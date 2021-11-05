@@ -48,9 +48,6 @@ module.exports = {
     images: {
         domains: ['cdn.chec.io'],
     },
-};
-
-module.exports = {
     async headers() {
         return [
             {

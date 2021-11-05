@@ -2,10 +2,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from '../styles/ProductModal.module.css';
 
-const loader = ({ src, width, quality }) => {
-    return `https://cdn.chec.io/${src}?w=${width}&q=${quality}`;
-};
-
 const ProductModal = ({ product, setID }) => {
     return (
         <>
@@ -19,8 +15,8 @@ const ProductModal = ({ product, setID }) => {
                 <div className={styles.productModalInnerContainer}>
                     <div className={styles.productImage}>
                         <Image
-                            loader={loader}
-                            src={product?.media?.source}
+                            // loader={loader}
+                            src={product?.image?.url}
                             layout="intrinsic"
                             objectFit="cover"
                             width="400"

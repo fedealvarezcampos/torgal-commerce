@@ -4,7 +4,7 @@ const ContentSecurityPolicy = `
     child-src *.youtube.com *.google.com *.stripe.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src 'self' *.chec.io blob: data:;
-    media-src 'none';
+    media-src 'self' *.chec.io;
     font-src 'self' *.gstatic.com;
     connect-src *;
 `;
@@ -41,13 +41,10 @@ const securityHeaders = [
 ];
 
 module.exports = {
-    i18n: {
-        locales: ['es'],
-        defaultLocale: 'es',
-    },
     images: {
         domains: ['cdn.chec.io'],
     },
+
     async headers() {
         return [
             {

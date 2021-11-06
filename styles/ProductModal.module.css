@@ -65,6 +65,7 @@
 
 .productModalBG {
     position: fixed;
+    right: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
@@ -74,6 +75,7 @@
     .productModalInnerContainer {
         flex-direction: column;
         align-items: center;
+        padding: 1.5rem 1.3rem 1.5rem 1.3rem;
         width: 12rem;
     }
 
@@ -90,7 +92,7 @@
     }
 
     .productImage {
-        width: 10rem;
-        height: 10rem;
+        width: 8rem;
+        height: 8rem;
     }
 }

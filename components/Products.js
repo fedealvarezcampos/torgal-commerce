@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SingleProduct from './SingleProduct';
 import ProductModal from './ProductModal';
 import styles from '../styles/Products.module.css';
@@ -12,6 +12,11 @@ const Products = ({ products, addToCart, setCartMenu }) => {
         setModalData(data);
         setSelectedID(id);
     };
+
+    useEffect(() => {
+        selectedID && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
+        !selectedID && document.body.removeAttribute('style', `overflow: hidden; margin-right: 15px;`);
+    }, [selectedID]);
 
     return (
         <>

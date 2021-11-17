@@ -6,7 +6,7 @@
     justify-content: space-between;
     width: clamp(320px, 28vw, 320px);
     height: 100%;
-    padding: 1.8rem 1.6rem 1.8rem 1.6rem;
+    padding: 2.1rem 1.6rem 2.1rem 1.6rem;
     border-radius: 20px;
     box-sizing: border-box;
     background-color: var(--dark-item);
@@ -62,8 +62,8 @@
 @media (max-width: 650px) {
     .container {
         gap: 4px;
-        width: 66vw;
-        padding: 1.6rem 1rem 1.6rem 1rem;
+        width: clamp(10rem, 66vw, 18rem);
+        padding: 1.8rem 1.1rem 1.8rem 1.1rem;
     }
 
     .container button {
